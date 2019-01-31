@@ -1,13 +1,25 @@
 package com.example.usager.projectfinalandroid;
 
+
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+
+
+import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.media.MediaPlayer;
 import android.content.Context;
+import android.widget.VideoView;
+
 
 
 
@@ -63,6 +75,51 @@ public class MainActivity extends AppCompatActivity {
     {
 
     }
+
+
+    public void drink(View view)
+    {
+
+        final boolean fin =false;
+       VideoView vv = (VideoView)findViewById(R.id.videoView2);
+        vv.setVisibility(View.VISIBLE);
+       vv.setVideoPath("android.resource://" + getPackageName() +"/raw/" + "drink");
+       vv.start();
+    try{
+        Thread.sleep(1000);
+        Thread t =new Thread(){
+            public void dormir()
+            {
+                try{
+                    Thread.sleep(5000);
+                    //fin=true;
+                    Thread.currentThread().interrupt();
+
+
+                }
+                catch (Exception e){}
+
+
+            }
+        };
+        t.start();
+        while (fin!=true)
+        {
+            vv.stopPlayback();
+            vv.setVisibility(View.INVISIBLE);
+        }
+
+    }
+    catch (Exception ex)
+    {
+
+    }
+
+
+
+
+    }
+
 
     public void onEgg(View view)
     {
