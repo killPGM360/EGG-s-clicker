@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
+    public void afficherPoulet()
+    {
+
+    }
+
     public void onEgg(View view)
     {
 
@@ -76,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         if(m_compteur%14==0)
         {
             afficherPuns();
+        }
+        if(m_compteur%100==0)
+        {
+            afficherPoulet();
         }
     }
 }
