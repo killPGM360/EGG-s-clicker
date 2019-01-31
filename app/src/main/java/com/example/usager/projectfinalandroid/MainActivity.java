@@ -6,20 +6,28 @@ import android.view.View;
 import java.util.Random;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.media.MediaPlayer;
+import android.content.Context;
 
-import java.util.List;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
     int m_compteur=0;
     int m_multipleManuel=1;
-
+    MediaPlayer mp;
+    Context m_context = this;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mp = MediaPlayer.create(m_context, R.raw.pop);
+
+
 
     }
 
@@ -55,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
     {
 
         incrementCompteur(m_multipleManuel);
+        try {
+            mp.start();
+        } catch(Exception e) {  }
     }
     public void incrementCompteur(int multiple)
     {
