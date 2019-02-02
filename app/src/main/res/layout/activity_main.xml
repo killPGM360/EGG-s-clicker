@@ -53,9 +53,10 @@
         android:text="take a shot"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/videoView2" />
+        app:layout_constraintTop_toBottomOf="@+id/videoView2"
+        app:layout_constraintVertical_bias="0.856" />
 
     <VideoView
         android:id="@+id/videoView2"
@@ -64,11 +65,26 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="62dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginBottom="57dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/btnDrink"
+        app:layout_constraintBottom_toTopOf="@+id/btnRetour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="198dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="arretVideo"
+        android:text="Retour"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
 
 </android.support.constraint.ConstraintLayout>
