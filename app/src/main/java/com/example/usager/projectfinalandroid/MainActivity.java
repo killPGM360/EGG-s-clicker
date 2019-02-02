@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -80,44 +81,37 @@ public class MainActivity extends AppCompatActivity {
     public void drink(View view)
     {
 
-        final boolean fin =false;
+
        VideoView vv = (VideoView)findViewById(R.id.videoView2);
         vv.setVisibility(View.VISIBLE);
        vv.setVideoPath("android.resource://" + getPackageName() +"/raw/" + "drink");
        vv.start();
-    try{
-        Thread.sleep(1000);
-        Thread t =new Thread(){
-            public void dormir()
-            {
-                try{
-                    Thread.sleep(5000);
-                    //fin=true;
-                    Thread.currentThread().interrupt();
+
+        Button btn = (Button)findViewById(R.id.btnRetour);
+        btn.setVisibility(View.VISIBLE);
 
 
-                }
-                catch (Exception e){}
 
 
-            }
-        };
-        t.start();
-        while (fin!=true)
-        {
-            vv.stopPlayback();
-            vv.setVisibility(View.INVISIBLE);
-        }
+
+
+
+
+
+
+
 
     }
-    catch (Exception ex)
+    public void arretVideo(View view)
     {
-
-    }
-
+        VideoView vv = (VideoView)findViewById(R.id.videoView2);
 
 
+        vv.stopPlayback();
+        vv.setVisibility(View.INVISIBLE);
 
+        Button btn = (Button)findViewById(R.id.btnRetour);
+        btn.setVisibility(View.INVISIBLE);
     }
 
 
@@ -141,8 +135,15 @@ public class MainActivity extends AppCompatActivity {
         }
         if(m_compteur%100==0)
         {
-            afficherPoulet();
+            Button btn = (Button)findViewById(R.id.btnDrink);
+            btn.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void goMarket()
+    {
+        Intent appel =new Intent(MainActivity.this, ActivityMarket.class);
+        startActivity(appel);
     }
 }
 
