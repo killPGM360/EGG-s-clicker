@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/ivOeuf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="244dp"
+        android:layout_height="339dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="8dp"
         android:onClick="onEgg"
@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201"
+        app:layout_constraintVertical_bias="0.325"
         app:srcCompat="@drawable/oeuf" />
 
     <TextView
@@ -44,16 +44,17 @@
 
     <Button
         android:id="@+id/btnDrink"
-        android:layout_width="198dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="16dp"
         android:onClick="drink"
         android:text="take a shot"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnMarket"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/videoView2"
@@ -64,14 +65,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="51dp"
         android:layout_marginEnd="62dp"
         android:layout_marginBottom="57dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/btnRetour"
+        app:layout_constraintBottom_toTopOf="@+id/btnMarket"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnRetour"
@@ -87,5 +90,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.973" />
+
+    <Button
+        android:id="@+id/btnMarket"
+        android:layout_width="91dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="25dp"
+        android:background="@android:drawable/ic_menu_today"
+        android:onClick="goMarket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnDrink"
+        app:layout_constraintTop_toBottomOf="@+id/videoView2" />
 
 </android.support.constraint.ConstraintLayout>
