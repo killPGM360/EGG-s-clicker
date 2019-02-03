@@ -140,9 +140,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void goMarket()
+    public void goMarket(View view)
     {
-        Intent appel =new Intent(MainActivity.this, ActivityMarket.class);
+        Intent appel =new Intent(getBaseContext(), ActivityMarket.class);
         startActivity(appel);
     }
 }
