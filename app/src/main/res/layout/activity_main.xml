@@ -78,7 +78,7 @@
 
     <Button
         android:id="@+id/btnRetour"
-        android:layout_width="198dp"
+        android:layout_width="188dp"
         android:layout_height="47dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -87,17 +87,18 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
+        app:layout_constraintVertical_bias="0.965" />
 
     <Button
         android:id="@+id/btnMarket"
-        android:layout_width="91dp"
+        android:layout_width="104dp"
         android:layout_height="88dp"
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="25dp"
-        android:background="@android:drawable/ic_menu_today"
+        android:background="@drawable/marketicon"
         android:onClick="goMarket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

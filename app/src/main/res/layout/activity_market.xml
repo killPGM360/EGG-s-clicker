@@ -7,4 +7,72 @@
     android:background="@drawable/market"
     tools:context=".ActivityMarket">
 
+    <Button
+        android:id="@+id/btnManual"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="64dp"
+        android:text="100"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnAutomatic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="256dp"
+        android:text="100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="19dp"
+        android:text="Manual click"
+        app:layout_constraintBottom_toTopOf="@+id/btnManual"
+        app:layout_constraintEnd_toEndOf="@+id/btnManual"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Automatic click"
+        app:layout_constraintBottom_toTopOf="@+id/btnAutomatic"
+        app:layout_constraintEnd_toEndOf="@+id/btnAutomatic"
+        app:layout_constraintTop_toBottomOf="@+id/btnManual" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="145dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnManual"
+        app:layout_constraintTop_toTopOf="@+id/btnManual" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="145dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAutomatic"
+        app:layout_constraintTop_toTopOf="@+id/btnAutomatic" />
 </android.support.constraint.ConstraintLayout>
