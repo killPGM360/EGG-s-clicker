@@ -25,11 +25,11 @@
     <TextView
         android:id="@+id/txtCompteur"
         style="@android:style/Widget.Holo.TextView.SpinnerItem"
-        android:layout_width="108dp"
+        android:layout_width="0dp"
         android:layout_height="67dp"
         android:layout_marginStart="164dp"
         android:layout_marginTop="33dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="8dp"
         android:text="0"
         android:textColor="@android:color/primary_text_light_nodisable"
@@ -37,6 +37,7 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/ivOeuf"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -67,9 +68,9 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="51dp"
         android:layout_marginEnd="62dp"
-        android:layout_marginBottom="57dp"
+        android:layout_marginBottom="78dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/btnMarket"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,15 +95,41 @@
 
     <Button
         android:id="@+id/btnMarket"
-        android:layout_width="104dp"
-        android:layout_height="88dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/marketicon"
         android:onClick="goMarket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnDrink"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="25dp"
+        android:background="@android:drawable/ic_menu_camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnMarket"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/videoView2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="543dp"
+        android:background="@android:drawable/ic_menu_save"
+        app:layout_constraintBottom_toTopOf="@+id/btnMarket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtCompteur"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

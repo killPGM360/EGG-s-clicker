@@ -10,4 +10,6 @@ public class ActivityMarket extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
     }
+
+    //achat des article avec sql lite
 }
