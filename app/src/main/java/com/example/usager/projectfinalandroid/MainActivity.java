@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mp = MediaPlayer.create(m_context, R.raw.pop);
-
+        InitializeJoueur();
 
 
     }
@@ -75,6 +75,34 @@ public class MainActivity extends AppCompatActivity {
     public void afficherPoulet()
     {
 
+    }
+
+    public void Save(View view)
+    {
+        JoueursBDD JoueurBd =new JoueursBDD(this);
+        classJoueur Joueur =new classJoueur(0,0,0);
+        JoueurBd.open();
+        classJoueur JoueurCurrent = JoueurBd.getJoueurById(1);
+        if(JoueurCurrent!=null)
+        {
+            JoueurCurrent.setScore(m_compteur);
+            JoueurBd.updateJoueur(1,JoueurCurrent);
+            classJoueur test= JoueurBd.getJoueurById(1);
+        }
+
+    }
+    public void InitializeJoueur()
+    {
+        JoueursBDD JoueurBd =new JoueursBDD(this);
+        JoueurBd.open();
+        //JoueurBd.insertJoueur(Joueur);
+
+        classJoueur JoueurCurrent = JoueurBd.getJoueurById(1);
+        if(JoueurCurrent!=null)
+        {
+            m_compteur=JoueurCurrent.getScore();
+            incrementCompteur(0);
+        }
     }
 
 
