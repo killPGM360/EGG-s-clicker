@@ -117,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = (Button)findViewById(R.id.btnRetour);
         btn.setVisibility(View.VISIBLE);
+        Button btn2 = (Button)findViewById(R.id.btnDrink);
+        btn2.setVisibility(View.INVISIBLE);
 
 
 
