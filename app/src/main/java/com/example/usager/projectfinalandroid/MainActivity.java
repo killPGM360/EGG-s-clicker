@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     public void Save(View view)
     {
         JoueursBDD JoueurBd =new JoueursBDD(this);
-        classJoueur Joueur =new classJoueur(0,0,0);
+
         JoueurBd.open();
         classJoueur JoueurCurrent = JoueurBd.getJoueurById(1);
         if(JoueurCurrent!=null)
@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
     public void InitializeJoueur()
     {
         JoueursBDD JoueurBd =new JoueursBDD(this);
+        //classJoueur Joueur =new classJoueur(0,0,0);
         JoueurBd.open();
         //JoueurBd.insertJoueur(Joueur);
 

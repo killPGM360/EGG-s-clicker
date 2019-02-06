@@ -6,7 +6,7 @@ public class classJoueur {
     private int manuel;
     private int automatic;
     public classJoueur(){}
-    public classJoueur(int Score, int Manuel, int Automatic){
+    public classJoueur(int id,int Score, int Manuel, int Automatic){
         this.score = Score;
         this.manuel = Manuel;
         this.automatic=Automatic;

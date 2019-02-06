@@ -44,8 +44,8 @@ public class JoueursBDD
         values.put(COL_MANUEL, joueur.getManuel());
         return bdd.update(TABLE_JOUEUR, values, COL_ID + " = " +id, null);
     }
-    public int removeJoueurById(int id){
-        return bdd.delete(TABLE_JOUEUR, COL_ID + " = " +id, null);
+    public int removeJoueur(){
+        return bdd.delete(TABLE_JOUEUR, null, null);
     }
 
     public classJoueur getJoueurById(int id){
