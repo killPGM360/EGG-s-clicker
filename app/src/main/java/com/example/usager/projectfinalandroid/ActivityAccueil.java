@@ -28,7 +28,7 @@ public class ActivityAccueil extends AppCompatActivity {
     }
     public void startGame()
     {
-        Intent appel =new Intent(getBaseContext(), ActivityMarket.class);
+        Intent appel =new Intent(getBaseContext(), MainActivity.class);
         startActivity(appel);
     }
 }
