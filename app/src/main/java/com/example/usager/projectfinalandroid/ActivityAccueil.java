@@ -39,6 +39,8 @@ public class ActivityAccueil extends AppCompatActivity {
         JoueurBd.removeJoueur();
 
         JoueurBd.insertJoueur(Joueur);
+        Button btn = (Button)findViewById(R.id.btnLoadGame);
+        btn.setVisibility(View.VISIBLE);
 
         startGame();
     }
