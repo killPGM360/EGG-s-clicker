@@ -3,10 +3,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class JoueursBDD
 {
     private static final int VERSION_BDD = 1;
-    private static final String NOM_BDD = "eleves.db";
+    private static final String NOM_BDD = "joueurs.db";
     private static final String TABLE_JOUEUR = "table_joueurs";
     private static final String COL_ID = "ID";
     private static final int NUM_COL_ID = 0;
@@ -44,8 +48,9 @@ public class JoueursBDD
         values.put(COL_MANUEL, joueur.getManuel());
         return bdd.update(TABLE_JOUEUR, values, COL_ID + " = " +id, null);
     }
-    public int removeJoueur(){
-        return bdd.delete(TABLE_JOUEUR, null, null);
+    public void removeJoueur(){
+        maBaseSQLite.efface(bdd);
+        //return bdd.delete(TABLE_JOUEUR, COL_ID + " = 1", null);
     }
 
     public classJoueur getJoueurById(int id){
@@ -53,6 +58,31 @@ public class JoueursBDD
         Cursor c = bdd.query(TABLE_JOUEUR, new String[] {COL_ID, COL_SCORE, COL_AUTOMATIC,COL_MANUEL},
         "ID=?", new String[]{iid}, null, null, null);
         return cursorToJoueur(c);
+    }
+    public List<classJoueur> getAllJoueurs()
+    {
+        Cursor c=bdd.query(TABLE_JOUEUR, new String[] {COL_ID, COL_SCORE, COL_AUTOMATIC,COL_MANUEL},
+                null, null, null, null, null);
+        classJoueur joueur = new classJoueur();
+        List<classJoueur> liste=new ArrayList<classJoueur>() {};
+        c.moveToFirst();
+        if (c.getCount() == 0)
+            return null;
+        do
+        {
+
+
+            joueur=new classJoueur();
+            joueur.setId(c.getInt(NUM_COL_ID));
+            joueur.setScore(c.getInt(NUM_COL_SCORE));
+            joueur.setAutomatic(c.getInt(NUM_COL_AUTOMATIC));
+            joueur.setManuel(c.getInt(NUM_COL_MANUEL));
+            c.moveToNext();
+            liste.add(joueur);
+        }while(c.moveToNext());
+        return  liste;
+
+
     }
     private classJoueur cursorToJoueur(Cursor c){
         if (c.getCount() == 0)

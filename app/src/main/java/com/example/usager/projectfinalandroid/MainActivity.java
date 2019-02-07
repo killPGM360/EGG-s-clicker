@@ -94,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
     public void InitializeJoueur()
     {
         JoueursBDD JoueurBd =new JoueursBDD(this);
-        //classJoueur Joueur =new classJoueur(0,0,0);
+
         JoueurBd.open();
-        //JoueurBd.insertJoueur(Joueur);
+
 
         classJoueur JoueurCurrent = JoueurBd.getJoueurById(1);
         if(JoueurCurrent!=null)

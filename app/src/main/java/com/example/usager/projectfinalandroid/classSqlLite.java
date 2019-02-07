@@ -28,5 +28,10 @@ public class classSqlLite extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE " + TABLE_JOUEUR + ";");
         onCreate(db);
     }
+    public void efface(SQLiteDatabase db)
+    {
+        db.execSQL("DROP TABLE " + TABLE_JOUEUR + ";");
+        onCreate(db);
+    }
 }
 
