@@ -71,10 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void afficherPoulet()
-    {
 
-    }
 
     public void Save(View view)
     {
