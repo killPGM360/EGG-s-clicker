@@ -67,9 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 phrase=classPuns.phrase5();
                 break;
         }
+        afficheMsg(phrase);
 
-        Toast toast = Toast.makeText(getApplicationContext(), phrase, Toast.LENGTH_LONG);
-        toast.show();
     }
 
     public void afficherPoulet()
@@ -88,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             JoueurCurrent.setScore(m_compteur);
             JoueurBd.updateJoueur(1,JoueurCurrent);
             classJoueur test= JoueurBd.getJoueurById(1);
+            afficheMsg("Enregistrement effectué");
         }
 
     }
@@ -104,7 +104,13 @@ public class MainActivity extends AppCompatActivity {
             m_compteur=JoueurCurrent.getScore();
             m_multipleManuel=JoueurCurrent.getManuel();
             incrementCompteur(0);
+            afficheMsg("What's up master ");
         }
+        else
+            {
+                afficheMsg("Bienvenue jeune recrut");
+            }
+
     }
 
 
@@ -177,6 +183,12 @@ public class MainActivity extends AppCompatActivity {
         Intent appel =new Intent(getBaseContext(), ActivityMarket.class);
         startActivity(appel);
         finish();
+    }
+
+    public void afficheMsg(String msg)
+    {
+        Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
+        toast.show();
     }
 }
 
