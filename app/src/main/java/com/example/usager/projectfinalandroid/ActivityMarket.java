@@ -12,6 +12,7 @@ public class ActivityMarket extends AppCompatActivity {
     JoueursBDD JoueurBd =new JoueursBDD(this);
     int m_wallet;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

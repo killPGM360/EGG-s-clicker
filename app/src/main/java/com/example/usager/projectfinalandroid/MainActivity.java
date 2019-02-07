@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         if(JoueurCurrent!=null)
         {
             m_compteur=JoueurCurrent.getScore();
+            m_multipleManuel=JoueurCurrent.getManuel();
             incrementCompteur(0);
         }
     }
