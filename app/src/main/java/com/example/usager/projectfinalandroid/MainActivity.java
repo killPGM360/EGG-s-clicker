@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent appel =new Intent(getBaseContext(), ActivityMarket.class);
         startActivity(appel);
+        finish();
     }
 }
 
