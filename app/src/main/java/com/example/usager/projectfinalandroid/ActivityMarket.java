@@ -57,15 +57,33 @@ public class ActivityMarket extends AppCompatActivity {
             JoueurBd.updateJoueur(1,Joueur);
         }
         else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Trop pauvre, retourne travailler hahaha ", Toast.LENGTH_LONG);
-            toast.show();
+            afficheInsulte();
         }
         refresh(Joueur);
     }
     public void addAutomatic(View view)
     {
 
-        //refresh(Joueur);
+        Button btn = (Button)findViewById(R.id.btnAutomatic);
+        int prix = Integer.valueOf(btn.getText().toString()) ;
+
+        classJoueur Joueur=JoueurBd.getJoueurById(1);
+
+
+        if(m_wallet>=prix)
+        {
+            m_wallet=m_wallet- prix;
+            Joueur.setScore(m_wallet);
+            int automatic = Joueur.getAutomatic();
+            automatic++;
+            Joueur.setManuel(automatic);
+
+            JoueurBd.updateJoueur(1,Joueur);
+        }
+        else {
+            afficheInsulte();
+        }
+        refresh(Joueur);
     }
     public void refresh(classJoueur Joueur)
     {
@@ -77,6 +95,11 @@ public class ActivityMarket extends AppCompatActivity {
 
         TextView txt3=(TextView) findViewById(R.id.txtAutomatic);
         txt3.setText(String.valueOf(Joueur.getAutomatic()));
+    }
+    public void afficheInsulte()
+    {
+        Toast toast = Toast.makeText(getApplicationContext(), "Trop pauvre, retourne travailler hahaha ", Toast.LENGTH_LONG);
+        toast.show();
     }
 
     //achat des article avec sql lite
