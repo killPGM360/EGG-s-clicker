@@ -1,9 +1,11 @@
 package com.example.usager.projectfinalandroid;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -194,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if(m_compteur>2047483647)
         {
-            afficheMsg("GG you win the game");
+            afficheModal("GG you win the game");
         }
     }
 
@@ -204,11 +206,31 @@ public class MainActivity extends AppCompatActivity {
         startActivity(appel);
         finish();
     }
+    public void photo(View view)
+    {
+        afficheModal("Cette fonction n'est pas encore implémenté");
+    }
 
     public void afficheMsg(String msg)
     {
         Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
         toast.show();
+    }
+    public void afficheModal(String msg)
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        //alert.setTitle("Do you want to logout?");
+         alert.setMessage(msg);
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //Your action here
+            }
+        });
+
+
+
+        alert.show();
     }
 }
 

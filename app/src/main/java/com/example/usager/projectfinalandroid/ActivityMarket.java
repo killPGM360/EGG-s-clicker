@@ -102,5 +102,6 @@ public class ActivityMarket extends AppCompatActivity {
         toast.show();
     }
 
+
     //achat des article avec sql lite
 }
