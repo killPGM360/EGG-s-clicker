@@ -76,7 +76,7 @@ public class ActivityMarket extends AppCompatActivity {
             Joueur.setScore(m_wallet);
             int automatic = Joueur.getAutomatic();
             automatic++;
-            Joueur.setManuel(automatic);
+            Joueur.setAutomatic(automatic);
 
             JoueurBd.updateJoueur(1,Joueur);
         }

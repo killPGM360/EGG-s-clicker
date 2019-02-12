@@ -3,6 +3,7 @@ package com.example.usager.projectfinalandroid;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,8 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
     int m_compteur=0;
     int m_multipleManuel=1;
+    int m_multipleAuto;
     MediaPlayer mp;
     Context m_context = this;
+
+    Handler m_handler = new Handler();
+    int m_delay = 1000; //milliseconds
 
 
     @Override
@@ -42,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
         InitializeJoueur();
 
 
+
+
     }
+
 
     public void afficherPuns()
     {
@@ -100,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         {
             m_compteur=JoueurCurrent.getScore();
             m_multipleManuel=JoueurCurrent.getManuel();
+            m_multipleAuto=JoueurCurrent.getAutomatic();
             incrementCompteur(0);
             afficheMsg("What's up master ");
         }
@@ -107,8 +116,18 @@ public class MainActivity extends AppCompatActivity {
             {
                 afficheMsg("Bienvenue jeune recrut");
             }
+        m_handler.postDelayed(new Runnable(){
+            public void run(){
+                incrementCompteur(m_multipleAuto);
+
+                m_handler.postDelayed(this, m_delay);
+            }
+        }, m_delay);
+
 
     }
+
+
 
 
     public void drink(View view)
@@ -153,14 +172,14 @@ public class MainActivity extends AppCompatActivity {
     public void onEgg(View view)
     {
 
-        incrementCompteur(m_multipleManuel);
+        incrementCompteur(m_multipleManuel+1);
         try {
             mp.start();
         } catch(Exception e) {  }
     }
     public void incrementCompteur(int multiple)
     {
-        m_compteur=m_compteur+multiple+1;
+        m_compteur=m_compteur+multiple;
         TextView compteur=(TextView) findViewById(R.id.txtCompteur);
         compteur.setText(String.valueOf(m_compteur));
 
