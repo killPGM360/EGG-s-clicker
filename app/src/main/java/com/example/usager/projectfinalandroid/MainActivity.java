@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void incrementCompteur(int multiple)
     {
-        m_compteur=m_compteur+multiple;
+        m_compteur=m_compteur+multiple+1;
         TextView compteur=(TextView) findViewById(R.id.txtCompteur);
         compteur.setText(String.valueOf(m_compteur));
 
