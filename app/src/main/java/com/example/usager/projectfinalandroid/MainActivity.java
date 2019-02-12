@@ -192,6 +192,10 @@ public class MainActivity extends AppCompatActivity {
             Button btn = (Button)findViewById(R.id.btnDrink);
             btn.setVisibility(View.VISIBLE);
         }
+        if(m_compteur>2047483647)
+        {
+            afficheMsg("GG you win the game");
+        }
     }
 
     public void goMarket(View view)
