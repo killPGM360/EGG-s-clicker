@@ -53,4 +53,8 @@ public class ActivityAccueil extends AppCompatActivity {
         Intent appel =new Intent(getBaseContext(), MainActivity.class);
         startActivity(appel);
     }
+    public void importGame()
+    {
+        //call api for import an user
+    }
 }
