@@ -83,7 +83,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void Save(View view)
+    public void onSave(View view)
+    {
+        save();
+        afficheMsg("Enregistrement effectué");
+    }
+    public void save()
     {
         JoueursBDD JoueurBd =new JoueursBDD(this);
 
@@ -94,9 +99,8 @@ public class MainActivity extends AppCompatActivity {
             JoueurCurrent.setScore(m_compteur);
             JoueurBd.updateJoueur(1,JoueurCurrent);
             classJoueur test= JoueurBd.getJoueurById(1);
-            afficheMsg("Enregistrement effectué");
-        }
 
+        }
     }
     public void InitializeJoueur()
     {
@@ -118,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 afficheMsg("Bienvenue jeune recrut");
             }
+            //timer pour les auto click
         m_handler.postDelayed(new Runnable(){
             public void run(){
                 incrementCompteur(m_multipleAuto);
@@ -202,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goMarket(View view)
     {
+        save();
         Intent appel =new Intent(getBaseContext(), ActivityMarket.class);
         startActivity(appel);
         finish();

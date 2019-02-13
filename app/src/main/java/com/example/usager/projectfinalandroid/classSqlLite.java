@@ -18,13 +18,12 @@ public class classSqlLite extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-//on crée la table à partir de la requête écrite dans la variable CREATE_BDD
+
         db.execSQL(CREATE_BDD);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//On peut faire ce qu'on veut ici moi j'ai décidé de supprimer la table et de la recréer
-//comme ça lorsque je change la version les id repartent de 0
+
         db.execSQL("DROP TABLE " + TABLE_JOUEUR + ";");
         onCreate(db);
     }
