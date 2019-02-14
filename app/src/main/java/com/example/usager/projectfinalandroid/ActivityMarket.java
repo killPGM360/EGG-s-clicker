@@ -101,6 +101,14 @@ public class ActivityMarket extends AppCompatActivity {
         Toast toast = Toast.makeText(getApplicationContext(), "Trop pauvre, retourne travailler hahaha ", Toast.LENGTH_LONG);
         toast.show();
     }
+    public void dixManuel(View view)
+    {
+
+    }
+    public void dixAutomatic(View view)
+    {
+
+    }
 
 
     //achat des article avec sql lite
