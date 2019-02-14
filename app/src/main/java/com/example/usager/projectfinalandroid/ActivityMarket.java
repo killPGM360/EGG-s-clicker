@@ -40,6 +40,10 @@ public class ActivityMarket extends AppCompatActivity {
     }
     public void addManuel(View view)
     {
+       addOneManual();
+    }
+    public void addOneManual()
+    {
         Button btn = (Button)findViewById(R.id.btnManual);
         int prix = Integer.valueOf(btn.getText().toString()) ;
 
@@ -61,9 +65,8 @@ public class ActivityMarket extends AppCompatActivity {
         }
         refresh(Joueur);
     }
-    public void addAutomatic(View view)
+    public void addOneAutomatic()
     {
-
         Button btn = (Button)findViewById(R.id.btnAutomatic);
         int prix = Integer.valueOf(btn.getText().toString()) ;
 
@@ -85,6 +88,11 @@ public class ActivityMarket extends AppCompatActivity {
         }
         refresh(Joueur);
     }
+    public void addAutomatic(View view)
+    {
+        addOneAutomatic();
+
+    }
     public void refresh(classJoueur Joueur)
     {
         TextView txt1=(TextView) findViewById(R.id.txtCash);
@@ -103,11 +111,17 @@ public class ActivityMarket extends AppCompatActivity {
     }
     public void dixManuel(View view)
     {
-
+        for(int i =0;i<10;i++)
+        {
+            addOneManual();
+        }
     }
     public void dixAutomatic(View view)
     {
-
+        for(int i =0;i<10;i++)
+        {
+            addOneAutomatic();
+        }
     }
 
 
