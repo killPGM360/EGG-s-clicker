@@ -86,7 +86,7 @@
 
     <TextView
         android:id="@+id/txtManual"
-        android:layout_width="wrap_content"
+        android:layout_width="45"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -104,7 +104,7 @@
 
     <TextView
         android:id="@+id/txtAutomatic"
-        android:layout_width="10dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
