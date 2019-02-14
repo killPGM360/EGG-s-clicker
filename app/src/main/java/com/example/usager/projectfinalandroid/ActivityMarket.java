@@ -33,6 +33,8 @@ public class ActivityMarket extends AppCompatActivity {
         classJoueur Joueur=JoueurBd.getJoueurById(1);
 
         m_wallet=Joueur.getScore();
+
+
         refresh(Joueur);
 
 
@@ -103,6 +105,17 @@ public class ActivityMarket extends AppCompatActivity {
 
         TextView txt3=(TextView) findViewById(R.id.txtAutomatic);
         txt3.setText(String.valueOf(Joueur.getAutomatic()));
+
+
+        Button btnM=(Button) findViewById(R.id.btnManual);
+        Button btnA =(Button) findViewById(R.id.btnAutomatic);
+        int prixM=Integer.valueOf(btnM.getText().toString()) ;
+        int prixA=Integer.valueOf(btnA.getText().toString()) ;
+        prixM=30*Joueur.getManuel()+100;
+        prixA=30*Joueur.getAutomatic()+100;
+        btnM.setText(String.valueOf(prixM));
+        btnA.setText(String.valueOf(prixA));
+
     }
     public void afficheInsulte()
     {

@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     int m_compteur=0;
     int m_multipleManuel=1;
     int m_multipleAuto;
+
     MediaPlayer mp;
     Context m_context = this;
 
@@ -199,9 +200,9 @@ public class MainActivity extends AppCompatActivity {
             Button btn = (Button)findViewById(R.id.btnDrink);
             btn.setVisibility(View.VISIBLE);
         }
-        if(m_compteur>2047483647)
+        if(m_compteur>2000000000)
         {
-            afficheModal("GG you win the game");
+            afficheModal("GG you win the game, the game will eventually crash or bug");
         }
     }
 
