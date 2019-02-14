@@ -218,6 +218,8 @@ public class MainActivity extends AppCompatActivity {
         afficheModal("Cette fonction n'est pas encore implémenté");
     }
 
+    public void onGoal(View view){afficheModal("L'objectif du jeu est d'atteindre 2 000 000 000 d'oeufs");}
+
     public void afficheMsg(String msg)
     {
         Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
