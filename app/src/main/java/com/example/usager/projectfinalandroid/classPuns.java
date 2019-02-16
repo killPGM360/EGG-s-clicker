@@ -6,7 +6,7 @@ public class classPuns
     { return "Don't eggs'aggerate you're so egg'streme"; }
 
     static public String phrase2()
-    { return "Tu es egg'squis"; }
+    { return "It's egg-cellent !"; }
 
     static public String phrase3()
     { return "Maybe it's an easterEgg"; }

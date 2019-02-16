@@ -78,7 +78,10 @@ public class MainActivity extends AppCompatActivity {
                 phrase=classPuns.phrase5();
                 break;
             case 6:
-                phrase=classPuns.phrase5();
+                phrase=classPuns.phrase6();
+                break;
+            case -1:
+                phrase=String.valueOf(nb);
                 break;
         }
         classFonction.afficheMsg(phrase,this);
