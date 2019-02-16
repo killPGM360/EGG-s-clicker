@@ -3,7 +3,7 @@ package com.example.usager.projectfinalandroid;
 public class classPuns
 {
     static public String phrase1()
-    { return "Tu es egg'cellent!"; }
+    { return "Don't eggs'aggerate you're so egg'streme"; }
 
     static public String phrase2()
     { return "Tu es egg'squis"; }
@@ -16,6 +16,9 @@ public class classPuns
 
     static public String phrase5()
     { return "You're Egg'ceptional"; }
+
+    static public String phrase6()
+    { return "You're Egg'citing"; }
 
 
 

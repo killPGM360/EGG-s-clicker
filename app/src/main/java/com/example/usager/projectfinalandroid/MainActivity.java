@@ -77,9 +77,19 @@ public class MainActivity extends AppCompatActivity {
             case 5:
                 phrase=classPuns.phrase5();
                 break;
+            case 6:
+                phrase=classPuns.phrase5();
+                break;
         }
         classFonction.afficheMsg(phrase,this);
 
+    }
+    public void rollDiceForPuns()
+    {
+        Random rand = new Random();
+        int nb=rand.nextInt(6);
+        if(nb ==3)
+            afficherPuns();
     }
 
 
@@ -197,11 +207,11 @@ public class MainActivity extends AppCompatActivity {
         TextView compteur=(TextView) findViewById(R.id.txtCompteur);
         compteur.setText(String.valueOf(m_compteur));
 
-        if(m_compteur%14==0)
+        if(m_compteur%10==0)
         {
-            afficherPuns();
+            rollDiceForPuns();
         }
-        if(m_compteur%100==0)
+        if(m_compteur>100)
         {
             Button btn = (Button)findViewById(R.id.btnDrink);
             btn.setVisibility(View.VISIBLE);
