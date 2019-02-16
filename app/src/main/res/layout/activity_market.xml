@@ -190,4 +190,21 @@
         app:layout_constraintTop_toTopOf="@+id/btnAutomatic"
         app:layout_constraintVertical_bias="1.0" />
 
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="71dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/ic_menu_info_details"
+        android:onClick="onInfo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003" />
+
 </android.support.constraint.ConstraintLayout>

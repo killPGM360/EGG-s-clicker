@@ -187,6 +187,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void incrementCompteur(int multiple)
     {
+
+
+        int bonus=multiple/25;
+        bonus++;
+        multiple=multiple*bonus;
+
         m_compteur=m_compteur+multiple;
         TextView compteur=(TextView) findViewById(R.id.txtCompteur);
         compteur.setText(String.valueOf(m_compteur));

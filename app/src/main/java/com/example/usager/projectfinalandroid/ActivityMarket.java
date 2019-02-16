@@ -1,6 +1,8 @@
 package com.example.usager.projectfinalandroid;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -144,6 +146,26 @@ public class ActivityMarket extends AppCompatActivity {
         {
             addOneAutomatic();
         }
+    }
+    public void onInfo(View view)
+    {
+        afficheModal("Pour chaque tranche de 25 achetées, un multiplicateur sera appliqué");
+    }
+    public void afficheModal(String msg)
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        //alert.setTitle("Do you want to logout?");
+        alert.setMessage(msg);
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //Your action here
+            }
+        });
+
+
+
+        alert.show();
     }
 
 
