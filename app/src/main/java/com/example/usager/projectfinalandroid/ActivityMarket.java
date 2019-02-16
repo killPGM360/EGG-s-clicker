@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class ActivityMarket extends AppCompatActivity {
     JoueursBDD JoueurBd =new JoueursBDD(this);
     int m_wallet;
@@ -111,11 +112,19 @@ public class ActivityMarket extends AppCompatActivity {
         Button btnA =(Button) findViewById(R.id.btnAutomatic);
         int prixM=Integer.valueOf(btnM.getText().toString()) ;
         int prixA=Integer.valueOf(btnA.getText().toString()) ;
-        prixM=30*Joueur.getManuel()+100;
-        prixA=30*Joueur.getAutomatic()+100;
+        //prixM=30*Joueur.getManuel()+100;
+        //prixA=30*Joueur.getAutomatic()+100;
+        prixM=(int)formuleScalePrice(15,1.15,Joueur.getManuel())+100;
+        prixA=(int)formuleScalePrice(15,1.15,Joueur.getAutomatic())+100;
         btnM.setText(String.valueOf(prixM));
         btnA.setText(String.valueOf(prixA));
 
+    }
+    public long formuleScalePrice(int a, double r, int n)
+    {
+        long ex=(int)java.lang.Math.pow(r,(int)n);
+        double price=a*(ex - 1)/(r - 1);
+        return (long) price;
     }
     public void afficheInsulte()
     {
