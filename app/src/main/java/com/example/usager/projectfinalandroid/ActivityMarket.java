@@ -89,6 +89,7 @@ public class ActivityMarket extends AppCompatActivity {
             JoueurBd.updateJoueur(1,Joueur);
         }
         else {
+
             afficheInsulte();
         }
         refresh(Joueur);
@@ -130,8 +131,7 @@ public class ActivityMarket extends AppCompatActivity {
     }
     public void afficheInsulte()
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "Trop pauvre, retourne travailler hahaha ", Toast.LENGTH_LONG);
-        toast.show();
+        classFonction.afficheMsg("Trop pauvre, retourne travailler hahaha",this);
     }
     public void dixManuel(View view)
     {
@@ -149,24 +149,10 @@ public class ActivityMarket extends AppCompatActivity {
     }
     public void onInfo(View view)
     {
-        afficheModal("Pour chaque tranche de 25 achetées, un multiplicateur sera appliqué");
+        classFonction.afficheModal("Pour chaque tranche de 25 achetées, un multiplicateur sera appliqué",this);
+
     }
-    public void afficheModal(String msg)
-    {
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        //alert.setTitle("Do you want to logout?");
-        alert.setMessage(msg);
 
-        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                //Your action here
-            }
-        });
-
-
-
-        alert.show();
-    }
 
 
     //achat des article avec sql lite

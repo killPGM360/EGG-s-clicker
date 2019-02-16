@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 phrase=classPuns.phrase5();
                 break;
         }
-        afficheMsg(phrase);
+        classFonction.afficheMsg(phrase,this);
 
     }
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     public void onSave(View view)
     {
         save();
-        afficheMsg("Enregistrement effectué");
+        classFonction.afficheMsg("Enregistrement effectué",this);
     }
     public void save()
     {
@@ -117,11 +117,11 @@ public class MainActivity extends AppCompatActivity {
             m_multipleManuel=JoueurCurrent.getManuel();
             m_multipleAuto=JoueurCurrent.getAutomatic();
             incrementCompteur(0);
-            afficheMsg("What's up master ");
+            classFonction.afficheMsg("What's up master ",this);
         }
         else
             {
-                afficheMsg("Bienvenue jeune recrut");
+                classFonction.afficheMsg("Bienvenue jeune recrut",this);
             }
             //timer pour les auto click
         m_handler.postDelayed(new Runnable(){
@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if(m_compteur>2000000000)
         {
-            afficheModal("GG you win the game, the game will eventually crash or bug");
+            classFonction.afficheModal("GG you win the game, the game will eventually crash or bug",this);
         }
     }
 
@@ -221,32 +221,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void photo(View view)
     {
-        afficheModal("Cette fonction n'est pas encore implémenté");
+        classFonction.afficheModal("Cette fonction n'est pas encore implémenté",this);
     }
 
-    public void onGoal(View view){afficheModal("L'objectif du jeu est d'atteindre 2 000 000 000 d'oeufs");}
-
-    public void afficheMsg(String msg)
-    {
-        Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
-        toast.show();
-    }
-    public void afficheModal(String msg)
-    {
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        //alert.setTitle("Do you want to logout?");
-         alert.setMessage(msg);
-
-        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                //Your action here
-            }
-        });
+    public void onGoal(View view){ classFonction.afficheModal("L'objectif du jeu est d'atteindre 2 000 000 000 d'oeufs",this);}
 
 
-
-        alert.show();
-    }
 }
 
 
