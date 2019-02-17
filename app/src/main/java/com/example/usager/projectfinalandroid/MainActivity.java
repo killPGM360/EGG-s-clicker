@@ -1,25 +1,14 @@
 package com.example.usager.projectfinalandroid;
 
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
-
-
-import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.media.MediaPlayer;
 import android.content.Context;
 import android.widget.VideoView;
@@ -202,9 +191,9 @@ public class MainActivity extends AppCompatActivity {
     {
 
 
-        int bonus=multiple/25;
+        int bonus=multiple/10;
         bonus++;
-        multiple=multiple*bonus;
+        multiple=multiple*bonus*bonus;
 
         m_compteur=m_compteur+multiple;
         TextView compteur=(TextView) findViewById(R.id.txtCompteur);

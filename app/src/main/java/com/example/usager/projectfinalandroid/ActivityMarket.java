@@ -149,7 +149,7 @@ public class ActivityMarket extends AppCompatActivity {
     }
     public void onInfo(View view)
     {
-        classFonction.afficheModal("Pour chaque tranche de 25 achetées, un multiplicateur sera appliqué",this);
+        classFonction.afficheModal("Pour chaque tranche de 10 achetées, un multiplicateur sera appliqué",this);
 
     }
 
